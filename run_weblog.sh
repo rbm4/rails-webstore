@@ -1,0 +1,3 @@
+cd rails-weblog/
+sudo service postgresql start
+rails s -p $PORT -b $IP
