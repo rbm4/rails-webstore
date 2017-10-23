@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+    before_action :require_user, only: [:new,:create,:update,:destroy,:edit]
     def new
         @article = Article.new
     end

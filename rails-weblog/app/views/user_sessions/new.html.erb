@@ -1,4 +1,5 @@
-<div class="page-header"><h1>Sign In</h1></div>
+<div class="col-md-7">
+<div class="page-header"><h1>Login</h1></div>
 
 <%= form_for @user_session do |f| %>
   <%= render 'shared/errors', object: @user_session %>
@@ -18,5 +19,9 @@
     <%= f.check_box :remember_me %>
   </div>
 
-  <%= f.submit "Log in!", class: 'btn btn-primary btn-lg' %>
+  <%= f.submit "Login!", class: 'btn btn-primary btn-lg' %>
 <% end %>
+</div>
+<div class="col-md-5">
+  <%= render 'layouts/social' %>
+</div>

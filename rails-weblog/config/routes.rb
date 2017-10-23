@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'welcome/index'
   root 'pages#index'
-  
+  post 'search', to: 'pages#index'
   resources :articles do
     resources :comments
   end

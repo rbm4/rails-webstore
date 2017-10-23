@@ -1,0 +1,13 @@
+<%= form_tag 'search' %>
+    <%= text_field_tag 'content', nil, :placeholder => "Procurar..." %><br>
+    <div class="dropdown">
+      Filtrar
+      <div class="dropdown-content">
+        <ul>
+          <li><%= check_box_tag 'Artigos', 1, checked: true %> Artigos</li>
+          <li><%= check_box_tag 'Filmes', 1, checked: true %> Filmes</li>
+        </ul>
+      </div>
+    </div>
+    <%= submit_tag 'Search' %>
+    </form>

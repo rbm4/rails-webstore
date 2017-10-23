@@ -1,0 +1,25 @@
+  <header class="menu navbar navbar-fixed-top navbar-inverse nav-line">
+    <div class="content-wrapper ">
+      <nav>
+        <div class="col-xs-12 ">
+        <ul class="main_menu nav navbar-nav">
+          <li class="menu-link"><%= link_to 'CINEMA', root_path, class: "menu-link" %></li>
+          <li class="menu-link"><%= link_to 'MÚSICA', root_path, class: "menu-link" %></li>
+          <li class="menu-link"><%= link_to 'SÉRIES E TV', root_path, class: "menu-link" %></li>
+          <li class="menu-link"><%= link_to "HQ's E MANGÁS", root_path, class: "menu-link" %></li>
+          <li class="menu-link"><%= link_to 'LIVROS', root_path, class: "menu-link" %></li>
+          <li class="menu-link"><%= link_to 'GAMES', root_path, class: "menu-link" %></li>
+          <li class="menu-link"><%= link_to 'COLUNAS', root_path, class: "menu-link" %></li>
+          <li class="menu-link"><%= link_to 'MUNDO HG', root_path, class: "menu-link" %></li>
+          <li class="menu-link"><%= link_to 'FALE CONOSCO', root_path, class: "menu-link" %></li>
+          <% if current_user %>
+            <li  class="menu-link"><%= link_to 'Logout', sign_out_path, method: :delete, class: "menu-link btn btn-lg" %></li>
+          <% else %>
+            <li  class="menu-link"><%= link_to 'Login', sign_in_path, class: "menu-link btn btn-lg" %></li>
+          <% end %>
+        </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
