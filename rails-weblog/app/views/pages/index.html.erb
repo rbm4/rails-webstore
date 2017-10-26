@@ -1,4 +1,5 @@
 <div class="col-md-7">
+<%= render 'layouts/slides' %>
 <%= render 'articles/index' %>
 </div>
 <div class="col-md-5">
@@ -8,7 +9,7 @@
     <% if current_user %>
       Seja Bem vindo! <%= current_user.email %><br>
       <div class="dropdown">
-        <button class="dropbtn">Menu</button>
+        <button class="dropbtn">Menu <span class="caret"></span></button> 
           <div class="dropdown-content">
             <ul>
               <li><a href="#">Painel</a></li>

@@ -1,5 +1,16 @@
 <%= form_with model: @article, local: true do |form| %>
- 
+  <% if !(@article.portrait.file.nil?) %>
+  <%= image_tag(@article.portrait.url, class: "image-post") %>
+  <%= form.hidden_field :portrait, value: @article.portrait.url %>
+  <% end %><br>
+  <% if !@article.title.nil? %>
+  <h2><%= @article.title %></h2>
+  <% end %>
+  <hr>
+  <% if !@article.text.nil? %>
+  <%= @article.text %>
+  <% end %>
+  <hr>
   <% if @article.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -23,7 +34,15 @@
     <%= form.label :text %><br>
     <%= form.text_area :text %>
   </p>
- 
+  <p>
+    <%= form.label :status %><br>
+    <%= form.select :status, options_for_select([["Publicar", "pub"], ["Rascunho", "rasc"], ["Estoque","est"], ["Agendar","agn"]]) %>
+  </p>
+  
+  <p>
+    <%= form.label :portrait %><br>
+    <%= file_field_tag :portrait, accept: 'image/png,image/gif,image/jpeg', value: @article.portrait.url %>
+  </p>
   <p>
     <%= form.submit %>
   </p>

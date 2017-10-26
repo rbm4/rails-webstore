@@ -1,7 +1,7 @@
 <%= form_tag 'search' %>
     <%= text_field_tag 'content', nil, :placeholder => "Procurar..." %><br>
     <div class="dropdown">
-      Filtrar
+      Filtrar<span class="caret"></span>
       <div class="dropdown-content">
         <ul>
           <li><%= check_box_tag 'Artigos', 1, checked: true %> Artigos</li>

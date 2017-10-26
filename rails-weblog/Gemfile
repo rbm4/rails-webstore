@@ -8,6 +8,8 @@ gem 'pg'
 #autenticador
 gem 'authlogic', '~> 3.6', '>= 3.6.1'
 gem 'bootstrap-sass'
+#upload de arquivos
+gem 'carrierwave', '~> 1.0'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
