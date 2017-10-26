@@ -1,0 +1,123 @@
+/* line 5, /home/ubuntu/workspace/rails-weblog/app/assets/stylesheets/articles.scss */
+.image-post {
+  width: 30vw;
+  height: 20vw;
+}
+
+/* line 9, /home/ubuntu/workspace/rails-weblog/app/assets/stylesheets/articles.scss */
+hr {
+  margin-top: 0.5em;
+  margin-bottom: 1.5em;
+}
+/* line 5, /home/ubuntu/workspace/rails-weblog/app/assets/stylesheets/pages.scss */
+.carousel-inner > .item > img {
+  width: 100%;
+  height: 430px;
+}
+/* line 5, /home/ubuntu/workspace/rails-weblog/app/assets/stylesheets/user_session.scss */
+.form-control {
+  width: 30vw;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+body{
+    margin-top: 0px;
+    background-image: url(bg.jpg);
+    background-size: 100vw 60vw;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.main-content{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    margin-right: 8vw;
+    margin-left: 8vw;
+    margin-bottom: 30px;
+    background-color:white;
+}
+.main-banner{
+    margin-top: 1vw;
+    margin-bottom: 2%;
+    Height: 230px;
+    Width: 74vw;
+    content:url(hg.jpg);
+    box-shadow: 10px 10px 5px grey;
+}
+.navbar{
+    position: inherit;
+    Width: 74vw;
+}
+.content-wrapper{
+    width:100%;
+    float: left;
+}
+.pull-right{
+    padding-right: 4vw;
+}
+.menu-link{
+    padding-right: 0.3vw !important;
+    padding-left: 0.3vw !important;
+    color: white !important;
+    font-family: sans-serif !important;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.content-center{
+    text-align: left !important;
+    width: 74vw;
+}
+.nav-line{
+    border-bottom: 5px solid #EE7600;
+}
+
+.right-line{
+    border-top: 3px solid black;
+    margin-top: 2vw;
+    padding-top: 2vw;
+}

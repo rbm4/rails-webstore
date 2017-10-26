@@ -6,3 +6,6 @@ Aplicação de portfólio para uso pessoal.
 Esta aplicação contém:
 Autenticação usando gem Authlogic
 Workflow para login e para posts, sem nenhuma view
+
+Blog implementado para:
+Hostgeek
