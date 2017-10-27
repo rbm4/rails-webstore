@@ -6,6 +6,7 @@ gem 'rails', '~> 5.1.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 gem "font-awesome-rails"
+gem 'rails_12factor', group: :production
 #autenticador
 gem 'authlogic', '~> 3.6', '>= 3.6.1'
 gem 'bootstrap-sass'
