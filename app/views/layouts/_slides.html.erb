@@ -20,10 +20,10 @@
         <div class="centered-article-upper">
           <table class="table-slide">
           <tr>
-            <td class="title-slide"><%= @articles[t].title %></td>
+            <td class="title-slide"><%= @articles[t].title[0..70] %><% if @articles[t].title.size > 70 %>...<% end %></td>
           </tr>
           <tr>
-            <td class="text-slide"><%= @articles[t].text[0..80] %>...</td>
+            <td class="text-slide"><%= @articles[t].text[0..90] %>...</td>
           </tr>
         </table>
         </div>
