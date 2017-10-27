@@ -14,20 +14,25 @@
     <% 5.times do |t|%>
     <% if !@articles[t].nil? %>
     <div class="item <%= if !(t > 0) then "active" end %>">
-      <img class="img-slide" src="<%= @articles[t].portrait.url %>" alt="<%= @articles[t].text %>">
+      <div class="container-article">
+        <img class="img-slide" src="<%= @articles[t].portrait.url %>" alt="<%= @articles[t].text %>">
+        
+        <div class="centered-article-upper">
+          <table class="table-slide">
+          <tr>
+            <td class="title-slide"><%= @articles[t].title %></td>
+          </tr>
+          <tr>
+            <td class="text-slide"><%= @articles[t].text[0..80] %>...</td>
+          </tr>
+        </table>
+        </div>
+      </div>
     </div>
     <% end %>
     <% end %>
   </div>
 
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#slide" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#slide" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
+  
 </div>
 </div>

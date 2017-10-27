@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.1.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
+gem "font-awesome-rails"
 #autenticador
 gem 'authlogic', '~> 3.6', '>= 3.6.1'
 gem 'bootstrap-sass'

@@ -11578,7 +11578,11 @@ return t.dispatch("turbolinks:before-render",{data:{newBody:e}})},r.prototype.no
 
 }).call(this);
 (function() {
-
+  jQuery(function() {
+    return $('.fa-times').click(function() {
+      return $('#flash_div').hide();
+    });
+  });
 
 }).call(this);
 (function() {

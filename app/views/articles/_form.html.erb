@@ -1,7 +1,6 @@
 <%= form_with model: @article, local: true do |form| %>
   <% if !(@article.portrait.file.nil?) %>
   <%= image_tag(@article.portrait.url, class: "image-post") %>
-  <%= form.hidden_field :portrait, value: @article.portrait.url %>
   <% end %><br>
   <% if !@article.title.nil? %>
   <h2><%= @article.title %></h2>
@@ -41,7 +40,8 @@
   
   <p>
     <%= form.label :portrait %><br>
-    <%= file_field_tag :portrait, accept: 'image/png,image/gif,image/jpeg', value: @article.portrait.url %>
+    <%= form.file_field :portrait, accept: 'image/png,image/gif,image/jpeg' %>
+    <%= form.hidden_field :portrait_cache %>
   </p>
   <p>
     <%= form.submit %>

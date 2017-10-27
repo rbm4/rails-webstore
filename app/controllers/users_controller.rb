@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         @user.confirmed = true
         @user.role = "member"
         if @user.save
-            flash[:success] = "Account registered!"
+            flash[:success] = "Cadastro efetuado!"
             redirect_to root_path
         else
             render :new

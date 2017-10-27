@@ -5,18 +5,17 @@
 <div class="col-md-5">
 <%= render 'layouts/social' %>
   <div class="right-line">
-    <%= render 'layouts/searchbar' %>
-    <% if current_user %>
-      Seja Bem vindo! <%= current_user.email %><br>
-      <div class="dropdown">
-        <button class="dropbtn">Menu <span class="caret"></span></button> 
-          <div class="dropdown-content">
-            <ul>
-              <li><a href="#">Painel</a></li>
-              <li><a href="#">Perfil</a></li>
-            </ul>
-          </div>
+    <div class="row">
+      <div class="col-md-6">
+      <%= render 'layouts/searchbar' %>
+      </div>
+      <div class="col-md-5">
+        <div class="usermenu">
+        <%= render 'layouts/usermenu' %>
         </div>
-      <% end %>
+      </div>
+    </div>
+    
   </div>
+  <%= render 'layouts/parcerias' %>
 </div>  

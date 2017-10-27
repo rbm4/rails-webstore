@@ -1,0 +1,17 @@
+<% if current_user %>
+      Seja Bem vindo! <%= current_user.email %><br>
+      <div class="dropdown">
+        <button class="dropbtn">Menu <span class="caret"></span></button> 
+          <div class="dropdown-content">
+            <ul>
+              <li><a href="#">Painel</a></li>
+              <li><a href="#">Perfil</a></li>
+            </ul>
+          </div>
+        </div>
+<% else %>
+Cadastre-se agora!
+<%= link_to 'Sign-up', new_user_path, class: "btn btn-primary" %>
+
+
+<% end %>

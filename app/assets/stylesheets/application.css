@@ -13,9 +13,28 @@
  *= require_tree .
  *= require_self
  */
+ 
+ /*
+ *= require font-awesome
+ */
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Anton');
 
+
+.slide-size{
+    width:100%;
+    height: 25vw;
+}
+.carousel-indicators {
+  bottom:80%;
+  left:10%;
+}
+
+.img-slide{
+    width:100%;
+    height: 25vw;
+}
 body{
     margin-top: 0px;
     background-image: url(bg.jpg);
@@ -23,7 +42,31 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+.cursor-pointer{
+    cursor: pointer;
+}
 
+.banner-parcerias{
+    width:100%;
+    height: 29vw;
+    background-image: url(bg.jpg);
+    background-size: cover;
+}
+.line-break{
+    border-bottom:2px solid black;
+    margin-bottom:5px;
+}
+.article-title{
+    position: float;
+    background-color: rgba(0,0,0,0.2);
+    width: 90%;
+    text-align: left;
+}
+.portrait-img{
+    width:100%;
+    height: auto;
+    
+}
 .main-content{
     padding-top: 10px;
     padding-bottom: 20px;
@@ -35,8 +78,8 @@ body{
 .main-banner{
     margin-top: 1vw;
     margin-bottom: 2%;
-    Height: 230px;
-    Width: 74vw;
+    height: 300px;
+    width: 74vw;
     content:url(hg.jpg);
     box-shadow: 10px 10px 5px grey;
 }
@@ -98,5 +141,105 @@ body{
 .right-line{
     border-top: 3px solid black;
     margin-top: 2vw;
+    margin-bottom: 3vw;
     padding-top: 2vw;
+    padding-bottom: 2vw;
+    border-bottom: 3px solid black;
 }
+.usermenu{
+    padding: 1px;
+}
+
+.flash-message{
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgba(63, 127, 191, 0.90);
+    width: 190px;
+    border-radius: 10px;
+    z-index:2000;
+}
+
+.warning{
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    position: fixed;
+}
+
+
+/* css para posicionamento de texto sobre imagem
+*/
+.container-article {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+/* Bottom left text */
+.bottom-left-article {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+}
+
+/* Top left text */
+.top-left-article {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+/* Top right text */
+.top-right-article {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right-article {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+}
+
+/* Centered text */
+.centered-article-upper {
+    position: absolute;
+    top: 90%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: left;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size:18px;
+    height: 10vw;
+    
+    
+}
+.table-slide{
+    width:100%;
+    height: 10vh;
+}
+.title-slide{
+    font-family: 'Anton', sans-serif;
+    padding-left: 15px;
+    padding-top:5px;
+    padding-bottom: 5px;
+    padding-right: 15px;
+    background-color: rgba(230, 92, 0,0.75);
+}
+.text-slide{
+    padding-top:5px;
+    padding-bottom: -5px;
+    font-size: 13px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(0, 0, 0,0.75);
+}
+
