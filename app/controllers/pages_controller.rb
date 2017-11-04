@@ -5,4 +5,7 @@ class PagesController < ApplicationController
   def config_panel
     
   end
+  def partial
+    render partial: "layouts/painelMenus"
+  end
 end

@@ -25,13 +25,17 @@
   <% end %>
  
   <p>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <div class="form-group">
+    <%= form.label :title, 'Título' %><br>
+    <%= form.text_field :title, class: "form-control" %>
+    </div>
   </p>
  
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <div class="form-group">
+    <%= form.label :text, "Texto" %><br>
+    <%= form.text_area :text, class: 'form-control', rows: '9' %>
+    </div>
   </p>
   <p>
     <%= form.label :status %><br>
@@ -40,11 +44,11 @@
   
   <p>
     <%= form.label :portrait %><br>
-    <%= form.file_field :portrait, accept: 'image/png,image/gif,image/jpeg' %>
+    <%= form.file_field :portrait, accept: 'image/png,image/gif,image/jpeg', class: "btn btn-default" %>
     <%= form.hidden_field :portrait_cache %>
   </p>
   <p>
-    <%= form.submit %>
+    <%= form.submit 'Submeter', class: 'btn btn-primary' %>
   </p>
  
 <% end %>

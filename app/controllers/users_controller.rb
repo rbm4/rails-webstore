@@ -16,9 +16,12 @@ class UsersController < ApplicationController
             render :new
         end
     end
+    
+    def painel #painel form
+    end
 
   private
     def users_params
-        params.require(:user).permit(:email, :password, :password_confirmation)
+        params.require(:user).permit(:email, :password, :password_confirmation, :password_news)
     end
 end

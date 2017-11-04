@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-    before_action :require_user, only: [:new,:create,:update,:destroy,:edit]
+    before_action :require_admin, only: [:new,:create,:update,:destroy,:edit]
     def new
         @article = Article.new
         p @article.portrait

@@ -19,6 +19,24 @@ class ApplicationController < ActionController::Base
         return false
     end
   end
+  def require_admin
+    if current_user
+      if current_user.role == 'admin'
+        return true
+      end
+    end
+    flash[:notice] = "Não autorizado."
+    false
+  end
+  def post_permissions
+    if current_user
+      if current_user.role == ('admin' or 'colab' or 'editor' or 'author')
+        return true
+      end
+    end
+    flash[:notice] = "Não autorizado."
+    false
+  end
  
   private
     def current_user_session
