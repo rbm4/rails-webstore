@@ -11578,6 +11578,10 @@ return t.dispatch("turbolinks:before-render",{data:{newBody:e}})},r.prototype.no
 
 }).call(this);
 (function() {
+
+
+}).call(this);
+(function() {
   jQuery(function() {
     return $('.fa-times').click(function() {
       return $('#flash_div').hide();
@@ -11586,7 +11590,16 @@ return t.dispatch("turbolinks:before-render",{data:{newBody:e}})},r.prototype.no
 
 }).call(this);
 (function() {
-
+  $(function() {
+    return $("li[data-painel-menu]").click(function(view) {
+      var option;
+      view.preventDefault();
+      option = $(this).data("painel-menu");
+      $(".active").removeClass("active");
+      $(this).addClass("active");
+      return $.get('layouts/' + $(this).data("painel-menu"));
+    });
+  });
 
 }).call(this);
 (function() {
