@@ -11,7 +11,11 @@ class ApplicationController < ActionController::Base
         return false
     end
   end
-  
+  def require_poster
+    if current_user != nil and current_user.role == 'poster'
+      return true
+    end
+  end
   def require_user
     unless current_user
         flash[:notice] = "You must be logged in to access this page"
