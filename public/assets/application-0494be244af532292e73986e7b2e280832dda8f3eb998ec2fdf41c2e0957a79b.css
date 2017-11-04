@@ -9,6 +9,12 @@ hr {
   margin-top: 0.5em;
   margin-bottom: 1.5em;
 }
+
+/* line 14, /home/ubuntu/workspace/app/assets/stylesheets/articles.scss */
+.detailed-image {
+  width: 70%;
+  height: 450px;
+}
 /* line 5, /home/ubuntu/workspace/app/assets/stylesheets/pages.scss */
 .carousel-inner > .item > img {
   width: 100%;

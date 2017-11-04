@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  helper_method :current_user_session, :current_user, :require_user
+  helper_method :current_user_session, :current_user, :require_user, :require_admin, :post_permissions
   
   def require_no_user
     if current_user
@@ -23,19 +23,30 @@ class ApplicationController < ActionController::Base
     if current_user
       if current_user.role == 'admin'
         return true
+      else
+        return false
       end
     end
-    flash[:notice] = "Não autorizado."
-    false
+  end
+  def require_editor
+    if current_user
+      if current_user.role == 'editor'
+        return true
+      else
+        return false
+      end
+    end
   end
   def post_permissions
     if current_user
-      if current_user.role == ('admin' or 'colab' or 'editor' or 'author')
+      if require_admin or require_poster or require_editor
+        p 'true'
         return true
+      else
+        p 'false'
+        return false
       end
     end
-    flash[:notice] = "Não autorizado."
-    false
   end
  
   private

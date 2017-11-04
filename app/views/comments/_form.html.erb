@@ -1,11 +1,21 @@
 <%= form_with(model: [ @article, @article.comments.build ]) do |form| %>
   <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
+    <div class="form-group">
+      <%= form.label :commenter %><br>
+      <% if current_user %>
+      <%= form.text_field :commenter, value: current_user.email, disabled: true %>
+      <% else %>
+      <div class="form-group">
+      <%= form.text_field :commenter, class: 'form-control' %>
+    <% end %>
+    
+    </div>
   </p>
   <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
+    <div class="form-group">
+    <%= form.label :body, "Texto" %><br>
+    <%= form.text_area :body, class: 'form-control', rows: '5' %>
+    </div>
   </p>
   <p>
     <%= form.submit %>

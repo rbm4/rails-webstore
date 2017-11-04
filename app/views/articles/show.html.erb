@@ -1,17 +1,23 @@
+<div class="col-md-12">
+  <div align="center">
+  <h2><%= @article.title %></h2>
+ <p>
+   <%= image_tag(@article.portrait.url, class: 'detailed-image') %>
+   </div>
+ </p>
 <p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
+  <hr>
   <%= @article.text %>
 </p>
-
+<hr>
 <h2>Comments</h2>
 <%= render @article.comments %>
 
 <%= render 'comments/form' %>
 
-<%= link_to 'Back', articles_path %> |
-<%= link_to 'Edit', edit_article_path(@article) %> 
+<%= link_to 'Voltar', root_path %> <br>
+<% if post_permissions %>
+<%= link_to 'Editar', edit_article_path(@article) %>
+<%= link_to 'Apagar', article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+</div>
