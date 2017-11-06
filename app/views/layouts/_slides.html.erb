@@ -15,7 +15,7 @@
     <% if !@articles[t].nil? %>
     <div class="item <%= if !(t > 0) then "active" end %>">
       <div class="container-article">
-        <img class="img-slide" src="<%= @articles[t].portrait.url %>">
+        <img class="img-slide" src="<%= @articles[t].portrait %>">
         
         <div class="centered-article-upper">
           <table class="table-slide">

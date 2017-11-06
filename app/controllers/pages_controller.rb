@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.order(id: :desc)
   end
   def config_panel
     

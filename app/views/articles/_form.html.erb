@@ -1,6 +1,6 @@
-<%= form_with model: @article, local: true do |form| %>
-  <% if !(@article.portrait.file.nil?) %>
-  <%= image_tag(@article.portrait.url, class: "image-post") %>
+<%= form_with model: @article, local: true, html: { class: "directUpload", data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |form| %>
+  <% if !(@article.portrait.nil?) %>
+  <%= image_tag(@article.portrait, class: "image-post") %>
   <% end %><br>
   <% if !@article.title.nil? %>
   <h2><%= @article.title %></h2>
@@ -44,7 +44,7 @@
   <p>
     <%= form.label :portrait %><br>
     <%= form.file_field :portrait, accept: 'image/png,image/gif,image/jpeg', class: "btn btn-default" %>
-    <%= form.hidden_field :portrait_cache %>
+    <%= form.hidden_field :portrait_cache, value: @article.portrait %>
   </p>
   <p>
     <%= form.submit 'Submeter', class: 'btn btn-primary' %>

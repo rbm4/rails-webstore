@@ -13,4 +13,9 @@ Rails.application.routes.draw do
   
   delete '/sign_out', to: 'user_sessions#destroy', as: :sign_out
   get '/sign_in', to: 'user_sessions#new', as: :sign_in
+  
+  
+  
+   # global options responder -> makes sure OPTION request for CORS endpoints work
+  match '*path', via: [:options], to: lambda {|_| [204, { 'Content-Type' => 'text/plain' }]}
 end

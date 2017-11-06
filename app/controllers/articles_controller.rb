@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
     before_action :require_admin, only: [:new,:create,:update,:destroy,:edit]
+    before_action :set_s3_direct_post, only: [:new, :edit, :create, :update]
     def new
         @article = Article.new
-        p @article.portrait
     end
     
     def edit
@@ -11,7 +11,9 @@ class ArticlesController < ApplicationController
     
     def create
         @article = Article.new(article_params)
-
+        if @article.portrait == "" or @article.portrait == nil
+            @article.portrait = String(params['article']['portrait_cache'])
+        end
         if @article.save
             redirect_to @article
         else
@@ -25,7 +27,7 @@ class ArticlesController < ApplicationController
     end
  
     def index
-        @articles = Article.all
+        @articles = Article.order(id: :desc)
     end
     
     def update
@@ -40,12 +42,14 @@ class ArticlesController < ApplicationController
     def destroy
         @article = Article.find(params[:id])
         @article.destroy
+        flash[:success] = "Post completamente deletado!"
  
-        redirect_to articles_path
+        redirect_to root_path
     end
  
     private
     def article_params
         params.require(:article).permit(:title, :text, :portrait, :status)
     end
+    
 end

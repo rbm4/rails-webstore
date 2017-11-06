@@ -46,6 +46,14 @@ GEM
       scrypt (>= 1.2, < 4.0)
     autoprefixer-rails (7.1.5)
       execjs
+    aws-sdk (2.10.78)
+      aws-sdk-resources (= 2.10.78)
+    aws-sdk-core (2.10.78)
+      aws-sigv4 (~> 1.0)
+      jmespath (~> 1.0)
+    aws-sdk-resources (2.10.78)
+      aws-sdk-core (= 2.10.78)
+    aws-sigv4 (1.0.2)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.7)
@@ -82,6 +90,7 @@ GEM
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
+    jmespath (1.3.1)
     jquery-rails (4.3.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
@@ -104,6 +113,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     pg (0.21.0)
     rack (2.0.3)
+    rack-cors (1.0.2)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
@@ -189,6 +199,7 @@ PLATFORMS
 
 DEPENDENCIES
   authlogic (~> 3.6, >= 3.6.1)
+  aws-sdk (~> 2)
   bootstrap-sass
   byebug
   carrierwave (~> 1.0)
@@ -197,6 +208,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   pg
+  rack-cors
   rails (~> 5.1.1)
   rails_12factor
   sass-rails
