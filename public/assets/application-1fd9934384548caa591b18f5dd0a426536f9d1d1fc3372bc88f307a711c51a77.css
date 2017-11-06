@@ -15,6 +15,20 @@ hr {
   width: 70%;
   height: 450px;
 }
+
+/* line 19, /home/ubuntu/workspace/app/assets/stylesheets/articles.scss */
+.progress {
+  max-width: 600px;
+  margin: 0.2em 0 0.2em 0;
+}
+
+/* line 24, /home/ubuntu/workspace/app/assets/stylesheets/articles.scss */
+.progress .bar {
+  height: 1.2em;
+  padding-left: 0.2em;
+  color: white;
+  display: none;
+}
 /* line 5, /home/ubuntu/workspace/app/assets/stylesheets/pages.scss */
 .carousel-inner > .item > img {
   width: 100%;
@@ -105,7 +119,7 @@ body{
 .main-banner{
     margin-top: 1vw;
     margin-bottom: 2%;
-    height: 170px;
+    height: 17vh;
     width: 74vw;
     content:url(http://i.imgur.com/uxF4VZc.jpg);
     box-shadow: 10px 10px 5px grey;
@@ -180,10 +194,14 @@ body{
 .flash-message{
     margin-top: 20px;
     padding: 15px;
-    background-color: rgba(63, 127, 191, 0.90);
+    background-color: rgba(255, 255, 255, 0.90);
     width: 190px;
     border-radius: 10px;
-    z-index:2000;
+    z-index:5;
+}
+
+.main-index{
+    z-index:3;
 }
 
 .warning{
