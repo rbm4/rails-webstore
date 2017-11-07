@@ -2,5 +2,7 @@
 <%= render 'form' %>
 
 
-<%= link_to 'Back', root_path %>
+<% if current_user.role != "member" %>
+<%= link_to '<- Voltar painel', painel_path %>
+<% end %>
 </div>

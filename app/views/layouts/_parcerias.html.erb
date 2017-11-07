@@ -1,4 +1,8 @@
-<%= 7.times do %>
-<div class="banner-parcerias">Banner</div><br>
+<% (0..6).each do |i| %>
+<div class="banner-parcerias">
+    <% if !@banners[i].nil? %>
+        <%= image_tag(@banners[i].portrait, class: "side-banner-fit") %>
+    <% end %>
+</div><br>
 <div class="line-break"></div>
 <% end %>

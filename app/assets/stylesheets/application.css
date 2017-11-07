@@ -37,8 +37,8 @@
 }
 body{
     margin-top: 0px;
-    background-image: url(http://i.imgur.com/2XwU258.jpg);
-    background-size: 100vw 60vw;
+    background-image: url(https://s3.us-east-2.amazonaws.com/hostgeek.s3.amazonaws.com/bg.jpg);
+    background-size: 100vw 110%;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -80,7 +80,7 @@ body{
     margin-bottom: 2%;
     height: 17vh;
     width: 74vw;
-    content:url(http://i.imgur.com/uxF4VZc.jpg);
+    content:url(https://s3.us-east-2.amazonaws.com/hostgeek.s3.amazonaws.com/hg.jpg);
     box-shadow: 10px 10px 5px grey;
 }
 .navbar{

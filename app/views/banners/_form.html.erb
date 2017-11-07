@@ -1,0 +1,34 @@
+<%= form_with model: @banner, local: true, html: { class: "directUpload", data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |form| %>
+  <% if !(@banner.portrait.nil?) %>
+  <%= image_tag(@banner.portrait, class: "image-post") %>
+  <% end %><br>
+  <hr>
+  <hr>
+  <% if @banner.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@banner.errors.count, "error") %> Impediram este artigo de ser salvo:
+      </h2>
+      <ul>
+        <% @banner.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= form.label :place %><br>
+    <%= form.select :place, options_for_select(BANNER_PLACES) %>
+  </p>
+  
+  <p>
+    <%= form.label :portrait %><br>
+    <%= form.file_field :portrait, accept: 'image/png,image/gif,image/jpeg', class: "btn btn-default" %>
+    <%= form.hidden_field :portrait_cache, value: @banner.portrait %>
+  </p>
+  <p>
+    <%= form.submit 'Salvar', class: 'btn btn-primary' %>
+  </p>
+ 
+<% end %>

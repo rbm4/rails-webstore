@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 $(function() {
   $('.directUpload').find("input:file").each(function(i, elem) {
@@ -55,6 +54,9 @@ $(function() {
         // create hidden field
         var input = $("<input />", { type:'hidden', name: fileInput.attr('name'), value: url })
         form.append(input);
+        
+        // get miniature
+        
       },
       fail: function(e, data) {
         submitButton.prop('disabled', false);
@@ -67,3 +69,5 @@ $(function() {
     });
   });
 });
+
+

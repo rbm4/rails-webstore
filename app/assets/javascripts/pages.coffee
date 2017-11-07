@@ -5,3 +5,10 @@ jQuery ->
     $('.fa-times').click ->
         $('#flash_div').hide()
 
+jQuery ->
+    $("li[data-painel-menu]").click (view) ->
+        view.preventDefault()
+        option = $(this).data("painel-menu")
+        $(".active").removeClass("active")
+        $(this).addClass("active")
+        $.get ('layouts/' + $(this).data("painel-menu"))
