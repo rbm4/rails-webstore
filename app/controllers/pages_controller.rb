@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :require_user, only: [:config_panel,partial,portrait_update]
+  before_action :require_user, only: [:config_panel,:partial,:portrait_update]
   before_action :set_s3_direct_post, only: [:partial]
   def index
     @articles = Article.order(id: :desc)
