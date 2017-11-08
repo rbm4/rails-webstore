@@ -13801,6 +13801,20 @@ return $.widget;
     });
   });
 
+  $(function() {
+    return $('#submit-article').click(function() {
+      var portrait, status, text, title;
+      title = $('.article-title').value;
+      text = $('.article-text').value;
+      status = $('.article-status').value;
+      portrait = $('.article-portrait').value;
+      console.log(portrait);
+      console.log(title);
+      console.log(text);
+      return console.log(status);
+    });
+  });
+
   jQuery(function() {
     return $("li[data-painel-menu]").click(function(view) {
       var option;
@@ -13814,7 +13828,22 @@ return $.widget;
 
 }).call(this);
 (function() {
+  $(function() {
+    return $('#user_role').prop('disabled', true);
+  });
 
+  jQuery(function() {
+    return $("a[data-user-email]").click(function(view) {
+      var email, role;
+      view.preventDefault();
+      email = $(this).data("user-email");
+      role = $(this).data("user-role");
+      $('#dummy').val(email);
+      $('#user_email').val(email);
+      $('#user_role').val(role);
+      return $("#user_role").prop('disabled', false);
+    });
+  });
 
 }).call(this);
 (function() {
@@ -13851,14 +13880,24 @@ return $.widget;
 
 
 
-$(function() {
-  $('.directUpload').find("input:file").each(function(i, elem) {
+function validateForm() {
+    var x = document.getElementsByClassName("articleForm").find("title").value;
+    if (x <= 5) {
+        alert("Título deve conter no mínimo 5 caracteres");
+        return false;
+    }
+}
+
+
+$(function aws() {
+  $('*').find("input:file").each(function(i, elem) {
     var fileInput    = $(elem);
     var form         = $(fileInput.parents('form:first'));
     var submitButton = form.find('input[type="submit"]');
     var progressBar  = $("<div class='bar'></div>");
     var barContainer = $("<div class='progress'></div>").append(progressBar);
     fileInput.after(barContainer);
+    console.log("começando")
     fileInput.fileupload({
       fileInput:       fileInput,
       url:             form.data('url'),
@@ -13894,6 +13933,7 @@ $(function() {
         form.append(input);
         
         // get miniature
+        console.log("ok")
         
       },
       fail: function(e, data) {

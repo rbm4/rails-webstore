@@ -13,14 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-$(function() {
-  $('.directUpload').find("input:file").each(function(i, elem) {
+function validateForm() {
+    var x = document.getElementsByClassName("articleForm").find("title").value;
+    if (x <= 5) {
+        alert("Título deve conter no mínimo 5 caracteres");
+        return false;
+    }
+}
+
+
+$(function aws() {
+  $('*').find("input:file").each(function(i, elem) {
     var fileInput    = $(elem);
     var form         = $(fileInput.parents('form:first'));
     var submitButton = form.find('input[type="submit"]');
     var progressBar  = $("<div class='bar'></div>");
     var barContainer = $("<div class='progress'></div>").append(progressBar);
     fileInput.after(barContainer);
+    console.log("começando")
     fileInput.fileupload({
       fileInput:       fileInput,
       url:             form.data('url'),
@@ -56,6 +66,7 @@ $(function() {
         form.append(input);
         
         // get miniature
+        console.log("ok")
         
       },
       fail: function(e, data) {

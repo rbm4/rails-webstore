@@ -1,17 +1,23 @@
-<div class="col-md-5">
+<div class="col-md-4 col-xs-4">
     <div class="panel panel-default">
-      <div class="panel-heading"><h1>Painel Administrativo</h1></div>
+      <div class="panel-heading"><h2>Painel Administrativo</h2></div>
         <ul class="nav nav-pills nav-stacked">
           <li class="active" data-painel-menu="password"><a class="cursor-pointer" >Trocar Senha</a></li>
           <li data-painel-menu="editInfo"><a class="cursor-pointer" >Editar informações</a></li>
-          <li><a href="articles/new" class="cursor-pointer" >Adicionar novo post</a></li>
+          <li data-painel-menu="newArticle"><a class="cursor-pointer" >Adicionar novo post</a></li>
           <li><a href="banners/new" class="cursor-pointer" >Editar banners</a></li>
+          <li><a href="users/permission" class="cursor-pointer" >Permissões de usuários</a></li>
         </ul>
     </div>
     
 </div>
-<div class="col-md-7">
+<div class="col-md-8 col-xs-4">
 
-<div class="dinamic-menu"><%= render 'layouts/password'%></div>
+<div class="dinamic-menu">
+  <% if @partial.nil? %>
+    <%= render 'layouts/password'%>
+  <% end %>
+  
+</div>
 
 </div>

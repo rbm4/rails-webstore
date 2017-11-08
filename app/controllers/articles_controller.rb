@@ -14,10 +14,12 @@ class ArticlesController < ApplicationController
         if @article.portrait == "" or @article.portrait == nil
             @article.portrait = String(params['article']['portrait_cache'])
         end
+        p @article.portrait
         if @article.save
             redirect_to @article
         else
-            render 'new'
+            @partial = "newArticle"
+            render partial: 'painelMenus'
         end
             
     end

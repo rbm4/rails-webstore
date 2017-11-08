@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171107023439) do
+ActiveRecord::Schema.define(version: 20171107232505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20171107023439) do
     t.string "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
     t.index ["perishable_token"], name: "index_users_on_perishable_token", unique: true
     t.index ["persistence_token"], name: "index_users_on_persistence_token", unique: true
     t.index ["single_access_token"], name: "index_users_on_single_access_token", unique: true

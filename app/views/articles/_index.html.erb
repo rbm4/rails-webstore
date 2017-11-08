@@ -1,16 +1,22 @@
-<h1>Publicações recentes</h1>
+<div class="index-title nav-line"><h1>Publicações recentes</h1></div>
   <% @articles.each do |article| %>
    <hr>
+   <div class="well">
    <div class="row">
-   <div class="col-md-12">
+   <div class="col-md-6 col-xs-6">
         
         <img class="image-post" src="<%= article.portrait %>">
           
           
         
       </div>
+      <div class="col-md-6 col-xs-6">
+          <div class="index-title nav-line post-title"><h5><%= article.title %></h5></div>
+      </div>
   </div>
   <div class="row">
-    <div class="col-md-12"><%= article.text[0...200] %>... <%= link_to '(Continuar lendo)', article_path(article) %></div>
+    <div class="col-md-12 col-xs-12"><%= article.text[0...200] %>... <%= link_to '(Continuar lendo)', article_path(article) %></div>
   </div>
+  </div>
+  
   <% end %>

@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
   def require_user
     unless current_user
-        flash[:notice] = "You must be logged in to access this page"
+        flash[:notice] = "Você deve logar primeiro para acessar essa página."
         redirect_to sign_in_path
         return false
     end

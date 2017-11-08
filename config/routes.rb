@@ -5,9 +5,15 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :update]
   get '/painel', to: 'users#painel'
   get '/layouts/:partial', to: 'pages#partial'
+  get 'users/permission', to: 'users#permission'
+  post '/users/permission', to: 'users#permission'
+  get '/painel/infos', to: 'users#infos'
+  post '/layouts/editInfo', to: 'users#update', as: :painel_editInfo
+  
+  get '/portrait_update/', to: 'pages#portrait_update'
   
   resources :user_sessions, only: [:create, :destroy]
   resources :banners,       only: [:new, :create]

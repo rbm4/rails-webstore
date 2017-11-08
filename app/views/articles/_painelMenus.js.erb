@@ -4,16 +4,6 @@ $( ".dinamic-menu" ).html( "<%= escape_javascript( render( :partial => "layouts/
 $( ".dinamic-menu" ).html( "<%= escape_javascript( render( :partial => "layouts/#{@partial}") ) %>" );
 <% end %>
 
-$(".submit-article").on("click", function(){
-    var title = $('.article-title')
-    console.log(title.val());
-    var text = $('.article-text')
-    console.log(text.val());
-    var status = $('.article-status option:checked')
-    console.log(status.val());
-    var portrait = $('.image-post')
-    console.log(portrait.prop("src"));
-});
 
 $(function aws() {
   $('*').find("input:file").each(function(i, elem) {

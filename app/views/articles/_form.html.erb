@@ -1,6 +1,6 @@
-<%= form_with model: @article, local: true, html: { class: "directUpload", data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |form| %>
-  <% if !(@article.portrait.nil?) %>
-  <%= image_tag(@article.portrait, class: "image-post") %>
+<%= form_with url: "#", disabled: true, remote: true, html: { name: "articleForm", class: "directUpload", data: { 'form-data' => (@s3_direct_post.fields), 'url' => @s3_direct_post.url, 'host' => URI.parse(@s3_direct_post.url).host } } do |form| %>
+  <% if @article.portrait.nil? %>
+  <div class="portrait_mini"><%= image_tag("#{@article.portrait}", class: "image-post") %></div>
   <% end %><br>
   <% if !@article.title.nil? %>
   <h2><%= @article.title %></h2>
@@ -26,28 +26,31 @@
   <p>
     <div class="form-group">
     <%= form.label :title, 'Título' %><br>
-    <%= form.text_field :title, class: "form-control" %>
+    <%= form.text_field :title, class: "form-control article-title" %>
     </div>
   </p>
  
   <p>
     <div class="form-group">
     <%= form.label :text, "Texto" %><br>
-    <%= form.text_area :text, class: 'form-control', rows: '9' %>
+    <%= form.text_area :text, class: 'form-control article-text', rows: '9' %>
     </div>
   </p>
   <p>
+    <div class="form-group">
     <%= form.label :status %><br>
-    <%= form.select :status, options_for_select([["Publicar", "pub"], ["Rascunho", "rasc"], ["Estoque","est"], ["Agendar","agn"]]) %>
+    <%= select_tag :status, options_for_select([["Publicar", "pub"], ["Rascunho", "rasc"], ["Estoque","est"], ["Agendar","agn"]]), class: "article-status" %>
+    </div>
   </p>
   
   <p>
     <%= form.label :portrait %><br>
-    <%= form.file_field :portrait, accept: 'image/png,image/gif,image/jpeg', class: "btn btn-default" %>
+    <%= form.file_field :portrait, accept: 'image/png,image/gif,image/jpeg', class: "btn btn-default article-portrait" %>
     <%= form.hidden_field :portrait_cache, value: @article.portrait %>
   </p>
   <p>
-    <%= form.submit 'Submeter', class: 'btn btn-primary' %>
+    <% end %>
+    <%= button_tag 'Submeter', class: 'submit-article btn btn-primary'%>
+    <div class="upload-warning"></div>
   </p>
  
-<% end %>

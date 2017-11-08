@@ -2,9 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.index-title{
+    color:white;
+    background-color:#333;
+    padding-left: 10px;
+    
+}
+.well {
+    padding-left: 3px !important;
+    padding-right: 3px !important;
+}
+.post-title{
+    padding-top: 3px;
+}
 .image-post{
-    width:25vw;
-    height:13vw;
+    width: 100%;
+    height: auto;
 }
 hr{
     margin-top: 0.5em;

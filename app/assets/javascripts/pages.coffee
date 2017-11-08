@@ -4,7 +4,19 @@
 jQuery ->
     $('.fa-times').click ->
         $('#flash_div').hide()
+$ ->
+    $('#submit-article').click ->
+        title = $('.article-title').value
+        text = $('.article-text').value
+        status = $('.article-status').value
+        portrait = $('.article-portrait').value
+        console.log(portrait)
+        console.log(title)
+        console.log(text)
+        console.log(status)
+        
 
+        
 jQuery ->
     $("li[data-painel-menu]").click (view) ->
         view.preventDefault()
@@ -12,3 +24,4 @@ jQuery ->
         $(".active").removeClass("active")
         $(this).addClass("active")
         $.get ('layouts/' + $(this).data("painel-menu"))
+

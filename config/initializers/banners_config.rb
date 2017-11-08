@@ -1,1 +1,0 @@
-BANNER_PLACES = { "Index 1" => "i/0", "Index 2" => "i/1", "Index 3" => "i/2", "Index 4" => "i/3", "Index 5" => "i/4", "Index 6" => "i/5", "Index 7" => "i/6" }
